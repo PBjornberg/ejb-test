@@ -8,7 +8,7 @@ public class HelloWorldBean implements HelloWorld
 public void sayHello(String name)
 
 {
-System.out.println("Hello " + name + " It’s Working!");
+System.out.println("HelloWorldEJB Invoked. Message: " + name);
 
 }
 
