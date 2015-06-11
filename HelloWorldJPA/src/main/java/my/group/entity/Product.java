@@ -10,144 +10,166 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 /**
  * Product entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "PRODUCT", schema = "CLASSICCARS")
-public class Product implements java.io.Serializable {
+@Table(name="PRODUCT"
+    ,schema="CLASSICCARS"
+)
 
-	// Fields
+public class Product  implements java.io.Serializable {
 
-	private String productcode;
-	private String productname;
-	private String productline;
-	private String productscale;
-	private String productvendor;
-	private String productdescription;
-	private Integer quantityinstock;
-	private Double buyprice;
-	private Double msrp;
-	private Set<Orderdetail> orderdetails = new HashSet<Orderdetail>(0);
 
-	// Constructors
+    // Fields    
 
-	/** default constructor */
-	public Product() {
-	}
+     private String productcode;
+     private String productname;
+     private String productline;
+     private String productscale;
+     private String productvendor;
+     private String productdescription;
+     private Integer quantityinstock;
+     private Double buyprice;
+     private Double msrp;
+     private Set<Orderdetail> orderdetails = new HashSet<Orderdetail>(0);
+
+
+    // Constructors
+
+    /** default constructor */
+    public Product() {
+    }
 
 	/** minimal constructor */
-	public Product(String productcode) {
-		this.productcode = productcode;
-	}
+    public Product(String productcode) {
+        this.productcode = productcode;
+    }
+    
+    /** full constructor */
+    public Product(String productcode, String productname, String productline, String productscale, String productvendor, String productdescription, Integer quantityinstock, Double buyprice, Double msrp, Set<Orderdetail> orderdetails) {
+        this.productcode = productcode;
+        this.productname = productname;
+        this.productline = productline;
+        this.productscale = productscale;
+        this.productvendor = productvendor;
+        this.productdescription = productdescription;
+        this.quantityinstock = quantityinstock;
+        this.buyprice = buyprice;
+        this.msrp = msrp;
+        this.orderdetails = orderdetails;
+    }
 
-	/** full constructor */
-	public Product(String productcode, String productname, String productline,
-			String productscale, String productvendor,
-			String productdescription, Integer quantityinstock,
-			Double buyprice, Double msrp, Set<Orderdetail> orderdetails) {
-		this.productcode = productcode;
-		this.productname = productname;
-		this.productline = productline;
-		this.productscale = productscale;
-		this.productvendor = productvendor;
-		this.productdescription = productdescription;
-		this.quantityinstock = quantityinstock;
-		this.buyprice = buyprice;
-		this.msrp = msrp;
-		this.orderdetails = orderdetails;
-	}
+   
+    // Property accessors
+    @Id 
+    
+    @Column(name="PRODUCTCODE", unique=true, nullable=false, length=15)
 
-	// Property accessors
-	@Id
-	@Column(name = "PRODUCTCODE", unique = true, nullable = false, length = 15)
-	public String getProductcode() {
-		return this.productcode;
-	}
+    public String getProductcode() {
+        return this.productcode;
+    }
+    
+    public void setProductcode(String productcode) {
+        this.productcode = productcode;
+    }
+    
+    @Column(name="PRODUCTNAME", length=70)
 
-	public void setProductcode(String productcode) {
-		this.productcode = productcode;
-	}
+    public String getProductname() {
+        return this.productname;
+    }
+    
+    public void setProductname(String productname) {
+        this.productname = productname;
+    }
+    
+    @Column(name="PRODUCTLINE", length=50)
 
-	@Column(name = "PRODUCTNAME", length = 70)
-	public String getProductname() {
-		return this.productname;
-	}
+    public String getProductline() {
+        return this.productline;
+    }
+    
+    public void setProductline(String productline) {
+        this.productline = productline;
+    }
+    
+    @Column(name="PRODUCTSCALE", length=10)
 
-	public void setProductname(String productname) {
-		this.productname = productname;
-	}
+    public String getProductscale() {
+        return this.productscale;
+    }
+    
+    public void setProductscale(String productscale) {
+        this.productscale = productscale;
+    }
+    
+    @Column(name="PRODUCTVENDOR", length=50)
 
-	@Column(name = "PRODUCTLINE", length = 50)
-	public String getProductline() {
-		return this.productline;
-	}
+    public String getProductvendor() {
+        return this.productvendor;
+    }
+    
+    public void setProductvendor(String productvendor) {
+        this.productvendor = productvendor;
+    }
+    
+    @Column(name="PRODUCTDESCRIPTION", length=32700)
 
-	public void setProductline(String productline) {
-		this.productline = productline;
-	}
+    public String getProductdescription() {
+        return this.productdescription;
+    }
+    
+    public void setProductdescription(String productdescription) {
+        this.productdescription = productdescription;
+    }
+    
+    @Column(name="QUANTITYINSTOCK")
 
-	@Column(name = "PRODUCTSCALE", length = 10)
-	public String getProductscale() {
-		return this.productscale;
-	}
+    public Integer getQuantityinstock() {
+        return this.quantityinstock;
+    }
+    
+    public void setQuantityinstock(Integer quantityinstock) {
+        this.quantityinstock = quantityinstock;
+    }
+    
+    @Column(name="BUYPRICE", precision=52, scale=0)
 
-	public void setProductscale(String productscale) {
-		this.productscale = productscale;
-	}
+    public Double getBuyprice() {
+        return this.buyprice;
+    }
+    
+    public void setBuyprice(Double buyprice) {
+        this.buyprice = buyprice;
+    }
+    
+    @Column(name="MSRP", precision=52, scale=0)
 
-	@Column(name = "PRODUCTVENDOR", length = 50)
-	public String getProductvendor() {
-		return this.productvendor;
-	}
+    public Double getMsrp() {
+        return this.msrp;
+    }
+    
+    public void setMsrp(Double msrp) {
+        this.msrp = msrp;
+    }
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="product")
 
-	public void setProductvendor(String productvendor) {
-		this.productvendor = productvendor;
-	}
+    public Set<Orderdetail> getOrderdetails() {
+        return this.orderdetails;
+    }
+    
+    public void setOrderdetails(Set<Orderdetail> orderdetails) {
+        this.orderdetails = orderdetails;
+    }
+   
 
-	@Column(name = "PRODUCTDESCRIPTION", length = 32700)
-	public String getProductdescription() {
-		return this.productdescription;
-	}
 
-	public void setProductdescription(String productdescription) {
-		this.productdescription = productdescription;
-	}
 
-	@Column(name = "QUANTITYINSTOCK")
-	public Integer getQuantityinstock() {
-		return this.quantityinstock;
-	}
 
-	public void setQuantityinstock(Integer quantityinstock) {
-		this.quantityinstock = quantityinstock;
-	}
 
-	@Column(name = "BUYPRICE", precision = 52, scale = 0)
-	public Double getBuyprice() {
-		return this.buyprice;
-	}
 
-	public void setBuyprice(Double buyprice) {
-		this.buyprice = buyprice;
-	}
 
-	@Column(name = "MSRP", precision = 52, scale = 0)
-	public Double getMsrp() {
-		return this.msrp;
-	}
-
-	public void setMsrp(Double msrp) {
-		this.msrp = msrp;
-	}
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
-	public Set<Orderdetail> getOrderdetails() {
-		return this.orderdetails;
-	}
-
-	public void setOrderdetails(Set<Orderdetail> orderdetails) {
-		this.orderdetails = orderdetails;
-	}
 
 }

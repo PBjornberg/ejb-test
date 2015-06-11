@@ -10,190 +10,214 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 /**
  * Customer entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "CUSTOMER", schema = "CLASSICCARS")
-public class Customer implements java.io.Serializable {
+@Table(name="CUSTOMER"
+    ,schema="CLASSICCARS"
+)
 
-	// Fields
+public class Customer  implements java.io.Serializable {
 
-	private Integer customernumber;
-	private String customername;
-	private String contactlastname;
-	private String contactfirstname;
-	private String phone;
-	private String addressline1;
-	private String addressline2;
-	private String city;
-	private String state;
-	private String postalcode;
-	private String country;
-	private Integer salesrepemployeenumber;
-	private Double creditlimit;
-	private Set<Payment> payments = new HashSet<Payment>(0);
 
-	// Constructors
+    // Fields    
 
-	/** default constructor */
-	public Customer() {
-	}
+     private Integer customernumber;
+     private String customername;
+     private String contactlastname;
+     private String contactfirstname;
+     private String phone;
+     private String addressline1;
+     private String addressline2;
+     private String city;
+     private String state;
+     private String postalcode;
+     private String country;
+     private Integer salesrepemployeenumber;
+     private Double creditlimit;
+     private Set<Payment> payments = new HashSet<Payment>(0);
+
+
+    // Constructors
+
+    /** default constructor */
+    public Customer() {
+    }
 
 	/** minimal constructor */
-	public Customer(Integer customernumber) {
-		this.customernumber = customernumber;
-	}
+    public Customer(Integer customernumber) {
+        this.customernumber = customernumber;
+    }
+    
+    /** full constructor */
+    public Customer(Integer customernumber, String customername, String contactlastname, String contactfirstname, String phone, String addressline1, String addressline2, String city, String state, String postalcode, String country, Integer salesrepemployeenumber, Double creditlimit, Set<Payment> payments) {
+        this.customernumber = customernumber;
+        this.customername = customername;
+        this.contactlastname = contactlastname;
+        this.contactfirstname = contactfirstname;
+        this.phone = phone;
+        this.addressline1 = addressline1;
+        this.addressline2 = addressline2;
+        this.city = city;
+        this.state = state;
+        this.postalcode = postalcode;
+        this.country = country;
+        this.salesrepemployeenumber = salesrepemployeenumber;
+        this.creditlimit = creditlimit;
+        this.payments = payments;
+    }
 
-	/** full constructor */
-	public Customer(Integer customernumber, String customername,
-			String contactlastname, String contactfirstname, String phone,
-			String addressline1, String addressline2, String city,
-			String state, String postalcode, String country,
-			Integer salesrepemployeenumber, Double creditlimit,
-			Set<Payment> payments) {
-		this.customernumber = customernumber;
-		this.customername = customername;
-		this.contactlastname = contactlastname;
-		this.contactfirstname = contactfirstname;
-		this.phone = phone;
-		this.addressline1 = addressline1;
-		this.addressline2 = addressline2;
-		this.city = city;
-		this.state = state;
-		this.postalcode = postalcode;
-		this.country = country;
-		this.salesrepemployeenumber = salesrepemployeenumber;
-		this.creditlimit = creditlimit;
-		this.payments = payments;
-	}
+   
+    // Property accessors
+    @Id 
+    
+    @Column(name="CUSTOMERNUMBER", unique=true, nullable=false)
 
-	// Property accessors
-	@Id
-	@Column(name = "CUSTOMERNUMBER", unique = true, nullable = false)
-	public Integer getCustomernumber() {
-		return this.customernumber;
-	}
+    public Integer getCustomernumber() {
+        return this.customernumber;
+    }
+    
+    public void setCustomernumber(Integer customernumber) {
+        this.customernumber = customernumber;
+    }
+    
+    @Column(name="CUSTOMERNAME", length=50)
 
-	public void setCustomernumber(Integer customernumber) {
-		this.customernumber = customernumber;
-	}
+    public String getCustomername() {
+        return this.customername;
+    }
+    
+    public void setCustomername(String customername) {
+        this.customername = customername;
+    }
+    
+    @Column(name="CONTACTLASTNAME", length=50)
 
-	@Column(name = "CUSTOMERNAME", length = 50)
-	public String getCustomername() {
-		return this.customername;
-	}
+    public String getContactlastname() {
+        return this.contactlastname;
+    }
+    
+    public void setContactlastname(String contactlastname) {
+        this.contactlastname = contactlastname;
+    }
+    
+    @Column(name="CONTACTFIRSTNAME", length=50)
 
-	public void setCustomername(String customername) {
-		this.customername = customername;
-	}
+    public String getContactfirstname() {
+        return this.contactfirstname;
+    }
+    
+    public void setContactfirstname(String contactfirstname) {
+        this.contactfirstname = contactfirstname;
+    }
+    
+    @Column(name="PHONE", length=50)
 
-	@Column(name = "CONTACTLASTNAME", length = 50)
-	public String getContactlastname() {
-		return this.contactlastname;
-	}
+    public String getPhone() {
+        return this.phone;
+    }
+    
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    @Column(name="ADDRESSLINE1", length=50)
 
-	public void setContactlastname(String contactlastname) {
-		this.contactlastname = contactlastname;
-	}
+    public String getAddressline1() {
+        return this.addressline1;
+    }
+    
+    public void setAddressline1(String addressline1) {
+        this.addressline1 = addressline1;
+    }
+    
+    @Column(name="ADDRESSLINE2", length=50)
 
-	@Column(name = "CONTACTFIRSTNAME", length = 50)
-	public String getContactfirstname() {
-		return this.contactfirstname;
-	}
+    public String getAddressline2() {
+        return this.addressline2;
+    }
+    
+    public void setAddressline2(String addressline2) {
+        this.addressline2 = addressline2;
+    }
+    
+    @Column(name="CITY", length=50)
 
-	public void setContactfirstname(String contactfirstname) {
-		this.contactfirstname = contactfirstname;
-	}
+    public String getCity() {
+        return this.city;
+    }
+    
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    @Column(name="STATE", length=50)
 
-	@Column(name = "PHONE", length = 50)
-	public String getPhone() {
-		return this.phone;
-	}
+    public String getState() {
+        return this.state;
+    }
+    
+    public void setState(String state) {
+        this.state = state;
+    }
+    
+    @Column(name="POSTALCODE", length=15)
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getPostalcode() {
+        return this.postalcode;
+    }
+    
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+    
+    @Column(name="COUNTRY", length=50)
 
-	@Column(name = "ADDRESSLINE1", length = 50)
-	public String getAddressline1() {
-		return this.addressline1;
-	}
+    public String getCountry() {
+        return this.country;
+    }
+    
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    
+    @Column(name="SALESREPEMPLOYEENUMBER")
 
-	public void setAddressline1(String addressline1) {
-		this.addressline1 = addressline1;
-	}
+    public Integer getSalesrepemployeenumber() {
+        return this.salesrepemployeenumber;
+    }
+    
+    public void setSalesrepemployeenumber(Integer salesrepemployeenumber) {
+        this.salesrepemployeenumber = salesrepemployeenumber;
+    }
+    
+    @Column(name="CREDITLIMIT", precision=52, scale=0)
 
-	@Column(name = "ADDRESSLINE2", length = 50)
-	public String getAddressline2() {
-		return this.addressline2;
-	}
+    public Double getCreditlimit() {
+        return this.creditlimit;
+    }
+    
+    public void setCreditlimit(Double creditlimit) {
+        this.creditlimit = creditlimit;
+    }
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="customer")
 
-	public void setAddressline2(String addressline2) {
-		this.addressline2 = addressline2;
-	}
+    public Set<Payment> getPayments() {
+        return this.payments;
+    }
+    
+    public void setPayments(Set<Payment> payments) {
+        this.payments = payments;
+    }
+   
 
-	@Column(name = "CITY", length = 50)
-	public String getCity() {
-		return this.city;
-	}
 
-	public void setCity(String city) {
-		this.city = city;
-	}
 
-	@Column(name = "STATE", length = 50)
-	public String getState() {
-		return this.state;
-	}
 
-	public void setState(String state) {
-		this.state = state;
-	}
 
-	@Column(name = "POSTALCODE", length = 15)
-	public String getPostalcode() {
-		return this.postalcode;
-	}
 
-	public void setPostalcode(String postalcode) {
-		this.postalcode = postalcode;
-	}
 
-	@Column(name = "COUNTRY", length = 50)
-	public String getCountry() {
-		return this.country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	@Column(name = "SALESREPEMPLOYEENUMBER")
-	public Integer getSalesrepemployeenumber() {
-		return this.salesrepemployeenumber;
-	}
-
-	public void setSalesrepemployeenumber(Integer salesrepemployeenumber) {
-		this.salesrepemployeenumber = salesrepemployeenumber;
-	}
-
-	@Column(name = "CREDITLIMIT", precision = 52, scale = 0)
-	public Double getCreditlimit() {
-		return this.creditlimit;
-	}
-
-	public void setCreditlimit(Double creditlimit) {
-		this.creditlimit = creditlimit;
-	}
-
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "customer")
-	public Set<Payment> getPayments() {
-		return this.payments;
-	}
-
-	public void setPayments(Set<Payment> payments) {
-		this.payments = payments;
-	}
 
 }

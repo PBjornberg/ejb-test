@@ -6,78 +6,95 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+
 /**
  * Productline entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "PRODUCTLINE", schema = "CLASSICCARS")
-public class Productline implements java.io.Serializable {
+@Table(name="PRODUCTLINE"
+    ,schema="CLASSICCARS"
+)
 
-	// Fields
+public class Productline  implements java.io.Serializable {
 
-	private String productline;
-	private String textdescription;
-	private String htmldescription;
-	private byte[] image;
 
-	// Constructors
+    // Fields    
 
-	/** default constructor */
-	public Productline() {
-	}
+     private String productline;
+     private String textdescription;
+     private String htmldescription;
+     private byte[] image;
+
+
+    // Constructors
+
+    /** default constructor */
+    public Productline() {
+    }
 
 	/** minimal constructor */
-	public Productline(String productline) {
-		this.productline = productline;
-	}
+    public Productline(String productline) {
+        this.productline = productline;
+    }
+    
+    /** full constructor */
+    public Productline(String productline, String textdescription, String htmldescription, byte[] image) {
+        this.productline = productline;
+        this.textdescription = textdescription;
+        this.htmldescription = htmldescription;
+        this.image = image;
+    }
 
-	/** full constructor */
-	public Productline(String productline, String textdescription,
-			String htmldescription, byte[] image) {
-		this.productline = productline;
-		this.textdescription = textdescription;
-		this.htmldescription = htmldescription;
-		this.image = image;
-	}
+   
+    // Property accessors
+    @Id 
+    
+    @Column(name="PRODUCTLINE", unique=true, nullable=false, length=50)
 
-	// Property accessors
-	@Id
-	@Column(name = "PRODUCTLINE", unique = true, nullable = false, length = 50)
-	public String getProductline() {
-		return this.productline;
-	}
+    public String getProductline() {
+        return this.productline;
+    }
+    
+    public void setProductline(String productline) {
+        this.productline = productline;
+    }
+    
+    @Column(name="TEXTDESCRIPTION", length=4000)
 
-	public void setProductline(String productline) {
-		this.productline = productline;
-	}
+    public String getTextdescription() {
+        return this.textdescription;
+    }
+    
+    public void setTextdescription(String textdescription) {
+        this.textdescription = textdescription;
+    }
+    @Lob
+    @Column(name="HTMLDESCRIPTION")
 
-	@Column(name = "TEXTDESCRIPTION", length = 4000)
-	public String getTextdescription() {
-		return this.textdescription;
-	}
+    public String getHtmldescription() {
+        return this.htmldescription;
+    }
+    
+    public void setHtmldescription(String htmldescription) {
+        this.htmldescription = htmldescription;
+    }
+    @Lob
+    @Column(name="IMAGE")
 
-	public void setTextdescription(String textdescription) {
-		this.textdescription = textdescription;
-	}
+    public byte[] getImage() {
+        return this.image;
+    }
+    
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+   
 
-	@Lob
-	@Column(name = "HTMLDESCRIPTION")
-	public String getHtmldescription() {
-		return this.htmldescription;
-	}
 
-	public void setHtmldescription(String htmldescription) {
-		this.htmldescription = htmldescription;
-	}
 
-	@Lob
-	@Column(name = "IMAGE")
-	public byte[] getImage() {
-		return this.image;
-	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
+
+
+
 
 }
