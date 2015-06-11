@@ -1,9 +1,11 @@
-package my.group.beans;
+package com.corejsf;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "hello")
+@SessionScoped
 public class HelloBean {
     private String value = "Hello World!";
 

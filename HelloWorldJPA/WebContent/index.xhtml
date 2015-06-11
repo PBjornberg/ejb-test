@@ -5,18 +5,19 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions" lang="en"
 	xmlns:p="http://primefaces.org/ui">
-<head>
+<h:head>
 <title>index.xhtml</title>
 <meta name="keywords" content="enter,your,keywords,here" />
 <meta name="description" content="A short description of this page." />
 <meta name="content-type" content="text/html; charset=UTF-8" />
 
 <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
-</head>
+</h:head>
 <body>
 	<p>This is my XHTML page.</p>
 	<h1>Hello World PrimeFaces 2</h1>
 	<h:outputText value="#{hello.value}" />
+	<h:outputText value="Text" />
 
 	<h:form>
 		<p:editor value="#{hello.value}" />
