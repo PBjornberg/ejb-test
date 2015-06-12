@@ -14,13 +14,28 @@
 <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
 </h:head>
 <body>
-	<p>This is my XHTML page.</p>
-	<h1>Hello World PrimeFaces 2</h1>
-	<h:outputText value="#{hello.value}" />
-	<h:outputText value="Text" />
 
-	<h:form>
-		<p:editor value="#{hello.value}" />
-	</h:form>
+	<h1>Hello World: JSF 2.0, PrimeFaces 4.0</h1>
+
+	
+	<p:dataTable var="customer" value="#{dtBasicView.customers}">
+    <p:column headerText="Number">
+        <h:outputText value="#{customer.customernumber}" />
+    </p:column>
+ 
+    <p:column headerText="Name">
+        <h:outputText value="#{customer.customername}" />
+    </p:column>
+ 
+    <p:column headerText="City">
+        <h:outputText value="#{customer.city}" />
+    </p:column>
+ 
+    <p:column headerText="Country">
+        <h:outputText value="#{customer.country}" />
+    </p:column>
+</p:dataTable>
+	
+	
 </body>
 </html>

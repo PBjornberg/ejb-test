@@ -1,7 +1,5 @@
 package com.corejsf;
 
-import java.util.ArrayList;
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -32,7 +30,6 @@ public class HelloBean {
 		}
 		
 		return listString;
-		//return value;
 	}
  
 	public void setValue(String value) {
