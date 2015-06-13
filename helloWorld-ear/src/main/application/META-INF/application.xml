@@ -7,10 +7,10 @@
 	<module>
 		<ejb>helloWorld-ejb-1.0.jar</ejb>
 	</module>
-	<module>
+	<module id="WebModule_1434214328712">
 		<web>
-			<web-uri>helloWorld-jpa-1.0.war</web-uri>
-			<context-root>helloWorld</context-root>
-		</web>	
+			<web-uri>helloWorld-web.war</web-uri>
+			<context-root>helloWorld-web</context-root>
+		</web>
 	</module>
 </application>

@@ -56,7 +56,7 @@
 		</dependency>
 		<dependency>
 			<groupId>my.group</groupId>
-			<artifactId>helloWorld-jpa</artifactId>
+			<artifactId>helloWorld-web</artifactId>
 			<type>war</type>
 		</dependency>
 	</dependencies>

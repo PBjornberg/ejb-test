@@ -28,7 +28,7 @@
 	<modules>
 		<module>helloWorld-ear</module>
 		<module>helloWorld-ejb</module>
-		<module>helloWorld-jpa</module>
+		<module>helloWorld-web</module>
 	</modules>
 
 	<dependencyManagement>
@@ -48,7 +48,7 @@
 			</dependency>
 			<dependency>
 				<groupId>my.group</groupId>
-				<artifactId>helloWorld-jpa</artifactId>
+				<artifactId>helloWorld-web</artifactId>
 				<version>1.0</version>
 				<type>war</type>
 			</dependency>
