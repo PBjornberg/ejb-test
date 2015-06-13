@@ -30,8 +30,8 @@
 						</ejbModule>
 						<webModule>
 							<groupId>my.group</groupId>
-							<artifactId>helloWorld-jpa</artifactId>
-							<contextRoot>/HelloWorld-jpa</contextRoot>
+							<artifactId>helloWorld-web</artifactId>
+							<contextRoot>/HelloWorld-web</contextRoot>
 						</webModule>
 					</modules>
 					<displayName>helloWorld</displayName>
