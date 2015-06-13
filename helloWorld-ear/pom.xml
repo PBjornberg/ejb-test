@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
 		<groupId>my.group</groupId>
-		<artifactId>helloWorld</artifactId>
+		<artifactId>helloWorld-pom</artifactId>
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>helloWorld-ear</artifactId>
+	<artifactId>helloWorld</artifactId>
 	<packaging>ear</packaging>
 	<name>${project.artifactId}</name>
 	<build>
@@ -31,7 +31,7 @@
 						<webModule>
 							<groupId>my.group</groupId>
 							<artifactId>helloWorld-web</artifactId>
-							<contextRoot>/HelloWorld-web</contextRoot>
+							<contextRoot>helloWorld</contextRoot>
 						</webModule>
 					</modules>
 					<displayName>helloWorld</displayName>
@@ -45,7 +45,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>helloWorld-ear</finalName>
+		<finalName>helloWorld</finalName>
 	</build>
 	<!-- Define the versions of your ear components here -->
 	<dependencies>

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>my.group</groupId>
-	<artifactId>helloWorld</artifactId>
+	<artifactId>helloWorld-pom</artifactId>
 	<name>${project.artifactId}</name>
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -36,7 +36,7 @@
 			<!--Applikationsartifaktersomm�stevarak�ndap�systemniv� -->
 			<dependency>
 				<groupId>my.group</groupId>
-				<artifactId>helloWorld-ear</artifactId>
+				<artifactId>helloWorld</artifactId>
 				<version>1.0</version>
 				<type>ear</type>
 			</dependency>
