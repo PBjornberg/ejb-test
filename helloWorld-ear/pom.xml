@@ -34,7 +34,7 @@
 							<contextRoot>/HelloWorld-jpa</contextRoot>
 						</webModule>
 					</modules>
-					<displayName>My Ear Name displayed in the App Server</displayName>
+					<displayName>helloWorld</displayName>
 					<generateApplicationXml>true</generateApplicationXml>
 				</configuration>
 			</plugin>
