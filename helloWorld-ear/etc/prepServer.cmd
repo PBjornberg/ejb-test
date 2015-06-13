@@ -1,0 +1,1 @@
+C:\Apps\Oracle\wls1036\wlserver_10.3\common\bin\wlst.cmd serverConfig.py
