@@ -27,10 +27,10 @@ cd('/JDBCSystemResources/' + dsName + '/JDBCResource/' + dsName)
 cmo.setName(dsName)
 
 cd('/JDBCSystemResources/' + dsName + '/JDBCResource/' + dsName + '/JDBCDataSourceParams/' + dsName ) 
-set('JNDINames',jarray.array([String('dsName )], String)) 
+set('JNDINames',jarray.array([String(dsName)], String))
 
 cd('/JDBCSystemResources/' + dsName + '/JDBCResource/' + dsName + '/JDBCDriverParams/' + dsName ) 
-cmo.setUrl(dsURL) 
+cmo.setUrl(dsURL)
 cmo.setDriverName( dsDriverName ) 
 cmo.setPassword(dsPassword) 
 

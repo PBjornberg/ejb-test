@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>my.group</groupId>
+		<artifactId>helloWorld</artifactId>
+		<version>1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>my.group</groupId>
-	<artifactId>HelloWorldJPA</artifactId>
-	<version>1.0</version>
-	<packaging>war</packaging>
-
+	<artifactId>helloWorld-jpa</artifactId>
+	<packaging>war</packaging>	
+	<name>${project.artifactId}</name>
 	<build>
 		<plugins>
 			<plugin>
@@ -18,39 +20,30 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
 				<configuration>
 					<version>2.5</version>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 	<dependencies>
-		<!--dependency> <groupId>javaee</groupId> <artifactId>javaee-api</artifactId> 
-			<version>5</version> </dependency -->
-
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>4.0</version>
-		</dependency>
-
+			</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>1.0.2</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>javax.faces-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 </project>
