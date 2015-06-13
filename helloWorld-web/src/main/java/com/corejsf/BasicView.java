@@ -24,6 +24,7 @@ public class BasicView implements Serializable {
  	
     @PostConstruct
     public void init() {
+    	System.out.println(">>> BasicView.init");
     	customerDAO = new CustomerDAO();
     }
      
