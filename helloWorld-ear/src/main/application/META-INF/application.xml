@@ -5,12 +5,12 @@
 	version="1.4">
 	<display-name>HelloWorld EAR</display-name>
 	<module>
-		<ejb>HelloWorldEjb-1.0.jar</ejb>
+		<ejb>helloWorld-ejb-1.0.jar</ejb>
 	</module>
 	<module>
 		<web>
-			<web-uri>HelloWorldJPA-1.0.war</web-uri>
-			<context-root>HelloWorld</context-root>
+			<web-uri>helloWorld-jpa-1.0.war</web-uri>
+			<context-root>helloWorld</context-root>
 		</web>	
 	</module>
 </application>
