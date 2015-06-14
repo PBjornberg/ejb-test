@@ -348,13 +348,13 @@
 
 	<distributionManagement>
 		<site>
-			<id>site-regina</id>
-			<url>dav:${site.upload.base.url}/helloworld</url>
+			<id>site-helloWorld</id>
+			<url>dav:${site.upload.base.url}/helloWorld</url>
 		</site>
 
 		<repository>
 			<id>deployment</id>
-			<name>ReginaReleases</name>
+			<name>HelloWorldReleases</name>
 			<url>http://${nexus.host}/nexus/content/repositories/releases/</url>
 		</repository>
 	</distributionManagement>
