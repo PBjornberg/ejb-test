@@ -9,10 +9,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>helloWorld-ws</artifactId>
-	<packaging>jar</packaging>
-	<name>helloWorld-ws</name>
-	<url>http://maven.apache.org</url>
-
+	<packaging>war</packaging>
+	<name>${project.artifactId}</name>
 	<build>
 		<plugins>
 			<plugin>
@@ -22,7 +20,55 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<version>2.5</version>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<packageName>my.group.ws</packageName>
+							<sourceDestDir>src/main/java</sourceDestDir>
+							<wsdlDirectory>src/main/resources/META-INF/wsdl/</wsdlDirectory>
+							<wsdlFiles>
+								<wsdlFile>
+									calculator.wsdl
+								</wsdlFile>
+							</wsdlFiles>
+							<staleFile>${project.build.directory}/jaxws/stale/CalculatorSerivce.stale</staleFile>
+						</configuration>
+						<id>wsimport-generate-CalculatorSerivce</id>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>javax.xml</groupId>
+						<artifactId>webservices-api</artifactId>
+						<version>2.1-b14</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<sourceDestDir>${project.build.directory}/generated-sources/jaxws-wsimport</sourceDestDir>
+					<xnocompile>true</xnocompile>
+					<verbose>true</verbose>
+					<extension>true</extension>
+					<catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
+				</configuration>
+			</plugin>
 		</plugins>
+		<finalName>helloWorld-ws</finalName>
 	</build>
 
 	<properties>
@@ -30,6 +76,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>webservices-api</artifactId>
+			<version>2.1-b14</version>
+		</dependency>
 		<dependency>
 			<groupId>javaee</groupId>
 			<artifactId>javaee-api</artifactId>

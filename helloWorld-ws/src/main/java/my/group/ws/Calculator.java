@@ -1,21 +1,18 @@
 package my.group.ws;
 
-import javax.ejb.Stateless;
 import javax.jws.WebService;
 
-@Stateless
-@WebService(
-        portName = "CalculatorPort",
-        serviceName = "CalculatorService",
-        targetNamespace = "http://superbiz.org/wsdl",
-        endpointInterface = "org.superbiz.calculator.ws.CalculatorWs")
+@WebService(name = "CalculatorWs", targetNamespace = "http://localhost/wsdl")
 public class Calculator implements CalculatorWs {
 
-    public int sum(int add1, int add2) {
-        return add1 + add2;
-    }
+	@Override
+	public int multiply(int arg0, int arg1) {
+		return arg0 * arg1;
+	}
 
-    public int multiply(int mul1, int mul2) {
-        return mul1 * mul2;
-    }
+	@Override
+	public int sum(int arg0, int arg1) {
+		return arg0 + arg1;
+	}
+
 }
