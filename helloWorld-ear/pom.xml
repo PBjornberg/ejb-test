@@ -6,7 +6,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>helloWorld</artifactId>
+	<artifactId>helloWorld-ear</artifactId>
 	<packaging>ear</packaging>
 	<name>${project.artifactId}</name>
 	<build>
@@ -45,7 +45,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>helloWorld</finalName>
+		<finalName>helloWorld-ear</finalName>
 	</build>
 	<!-- Define the versions of your ear components here -->
 	<dependencies>
