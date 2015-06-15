@@ -1,4 +1,4 @@
-package my.group.server;
+	package my.group.server;
 
 import javax.ejb.Stateless;
 

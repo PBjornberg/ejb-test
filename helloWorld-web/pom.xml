@@ -6,7 +6,7 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>helloWorld-web</artifactId>
 	<packaging>war</packaging>
@@ -32,6 +32,10 @@
 		<finalName>helloWorld-war</finalName>
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
